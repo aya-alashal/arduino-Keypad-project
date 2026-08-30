@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "author": "Rahaf Alomari",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 87, "left": -77.4, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -89.6,
+      "left": 188,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": 142, "left": 278.4, "attrs": {} },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -78.8,
+      "left": -464.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 290.4,
+      "left": 347.4,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:GND", "uno:GND.1", "black", [ "h-144" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-278.4", "v345.7", "h169" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h-288", "v345.8", "h264.6" ] ],
+    [ "lcd1:SCL", "uno:A5", "gold", [ "h-297.6", "v345.9", "h283.7" ] ],
+    [ "servo1:GND", "uno:GND.2", "black", [ "h-38.4", "v144", "h-19.2" ] ],
+    [ "servo1:V+", "uno:5V", "red", [ "h-48", "v153.7", "h-153.6" ] ],
+    [ "servo1:PWM", "uno:9", "green", [ "h-67.2", "v-134.2", "h-124.8" ] ],
+    [ "keypad1:R1", "uno:2", "cyan", [ "v28.8", "h220.8", "v-240", "h297.6" ] ],
+    [ "keypad1:R2", "uno:3", "magenta", [ "v19.2", "h220.4", "v-220.8", "h9.6" ] ],
+    [ "keypad1:R3", "uno:4", "#8f4814", [ "v9.6", "h220.5", "v-201.6", "h259.2" ] ],
+    [ "keypad1:R4", "uno:5", "green", [ "v38.4", "h182.2", "v-259.2", "h288" ] ],
+    [ "keypad1:C1", "uno:6", "white", [ "v48", "h163.1", "v-278.4", "h278.4" ] ],
+    [ "keypad1:C2", "uno:7", "gray", [ "v57.6", "h144", "v-297.6", "h278.4" ] ],
+    [ "keypad1:C3", "uno:8", "blue", [ "v67.2", "h124.65", "v-316.8", "h278.4" ] ],
+    [ "keypad1:C4", "uno:A0", "yellow", [ "v86.4", "h431.7" ] ],
+    [ "bz1:1", "uno:GND.3", "black", [ "v19.2", "h-259.2" ] ],
+    [ "bz1:2", "uno:10", "red", [ "v9.6", "h114.8", "v-508.8", "h-432" ] ]
+  ],
+  "dependencies": {}
+}
